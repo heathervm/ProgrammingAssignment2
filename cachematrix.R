@@ -1,15 +1,24 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
+## creates a matrix based on user input. 
+## w specifies the vector indicating size, x is the number of rows, y is the number of columns
+## z indicates whether the values are to be filled in by row. The default is TRUE
 
-makeCacheMatrix <- function(x = matrix()) {
-
+makeCacheMatrix <- function(w, x, y, z = TRUE){
+  mat <- matrix(w, nrow = x, ncol = y, byrow = z)
+  p <<- solve(mat)
+  
 }
 
+## returns the cached value
 
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function() {
+  if(!is.null(p)){
+  return(p)
+  print(p)  
+}
+else{
+p <<- solve(mat)
+return(p)
+print(p)
+}
 }
